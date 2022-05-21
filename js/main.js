@@ -29,6 +29,7 @@ let app = new Vue( {
                 },
             ],
             index : 0,
+            timer : 0
     },
     methods: {
         nextPic() {
@@ -37,13 +38,17 @@ let app = new Vue( {
         previousPic() {
             this.index === 0 ? this.index = this.images.length - 1 : this.index--;
         },
-        getIndex(i){
+        getIndex(i) {
             this.index = i;
         },
+        stopTimer() {
+            clearInterval(this.timer);
+        },
+        startTimer() {
+            this.timer = setInterval(() => {this.nextPic()}, 3000);
+        }
     },
     mounted() {
-        setInterval(() => {
-            this.nextPic()
-        }, 3000);
+        this.startTimer();
     }
 });

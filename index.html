@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <div class="container">
-                <div class="items">
+                <div class="items" @mouseover="stopTimer()" @mouseleave="startTimer()">
                     <div class="item active">
                         <img  :src = "images[index].src" alt="">
                         <div class="text">
@@ -25,7 +25,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="previousPic()"></div>
 
-                    <div class="thumb" :class="{active: index === i}" v-for="(item, i) in images" @click = "getIndex(i)">
+                    <div class="thumb" :class="{active: index === i}" v-for="(item, i) in images" @click="getIndex(i)">
                         <img :src="item.src" alt="">
                     </div>
                     
