@@ -25,21 +25,9 @@
                 <div class="thumbs">
                     <div class="prev" @click="previousPic()"></div>
 
-                    <div class="thumb active">
-                        <img src="./img/01.jpg" alt="">
-                    </div> 
-                    <div class="thumb">
-                        <img src="./img/02.jpg" alt="">
-                    </div> 
-                    <div class="thumb">
-                        <img src="./img/03.jpg" alt="">
-                    </div> 
-                    <div class="thumb">
-                        <img src="./img/04.jpg" alt="">
-                    </div> 
-                    <div class="thumb">
-                        <img src="./img/05.jpg" alt="">
-                    </div> 
+                    <div class="thumb" :class="{active: index === i}" v-for="(item, i) in images" @click = "getIndex(i)">
+                        <img :src="item.src" alt="">
+                    </div>
                     
                     <div class="next" @click="nextPic()"></div>
                 </div>

@@ -37,5 +37,8 @@ let app = new Vue( {
         previousPic() {
             this.index === 0 ? this.index = this.images.length - 1 : this.index--;
         },
+        getIndex(i){
+            this.index = i;
+        },
     }
 });
