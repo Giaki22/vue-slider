@@ -40,5 +40,10 @@ let app = new Vue( {
         getIndex(i){
             this.index = i;
         },
+    },
+    mounted() {
+        setInterval(() => {
+            this.nextPic()
+        }, 3000);
     }
 });
